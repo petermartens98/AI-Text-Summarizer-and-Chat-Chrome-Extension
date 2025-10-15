@@ -3,18 +3,19 @@
 A Chrome web extension that provides instant text summarization, key point generation and the ability to chat; with understanding of user preferences and language while generating; Backend is Python/Flask based and utilizes DeepSeek AI, with cloud storage powered by Supabase (PostgreSQL).
 
 ## Screenshots:
+<img width="416" height="566" alt="image" src="https://github.com/user-attachments/assets/a2f946d0-617c-4e39-b7ed-10009571cefb" />
 <img width="419" height="569" alt="image" src="https://github.com/user-attachments/assets/d4316e18-8d7f-442a-97f5-f6424767c5b1" />
 <img width="420" height="570" alt="image" src="https://github.com/user-attachments/assets/9b5f88cc-f229-4cf4-895c-71c8bacfd796" />
-
+<img width="420" height="572" alt="image" src="https://github.com/user-attachments/assets/bbbc0fba-3b54-40e3-b41b-b38865b86c3a" />
 
 ## Features
 
-- 🎯 **Context Menu Integration** - Right-click any highlighted text to generate summaries
-- 📝 **Direct Input** - Paste text directly into the extension popup
-- 💾 **Cloud Storage** - Automatically saves summaries and key points to Supabase
-- ⚡ **Fast & Efficient** - Powered by DeepSeek's AI model
-- 🌍 **Multi-Language Support** – Generate summaries in your preferred language
-- 🎨 **User Preferences** – Tailor summaries to your writing style and content needs
+- 🎯 **Context Menu Integration** - Right-click any highlighted text to generate summaries.
+- 📝 **Direct Input** - Paste text directly into the extension popup.
+- 💾 **Cloud Storage** - Automatically saves summaries and key points to Supabase.
+- ⚡ **Fast & Efficient** - Powered by DeepSeek's AI model for summaries and chat.
+- 🌍 **Multi-Language Support** – Generate summaries in your preferred language.
+- 🎨 **User Preferences** – Tailor summaries to your writing style and content needs.
 
 ## Tech Stack
 
@@ -136,9 +137,14 @@ ON CONFLICT (user_id) DO NOTHING;
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/summarize` | Generate summary from text |
-| GET | `/summaries` | Retrieve all saved summaries |
-| GET | `/summaries/:id` | Retrieve specific summary |
+| POST   | `/summarize` | Generate a summary and key points from provided text. Accepts optional `language` and `preferences`. |
+| POST   | `/chat` | Ask a question in the context of a previous summary or text. Returns answer and `session_id`. |
+| POST   | `/save_summary` | Save a summary, key points, and original text to the database. Optional `user_id` and `url`. |
+| GET    | `/summaries` | Retrieve all saved summaries for a given `user_id` (query parameter, default `1`). |
+| GET    | `/summaries/:id` | Retrieve a specific summary by its ID. |
+| GET    | `/preferences/:user_id` | Get user preferences including language, theme, and custom preferences. |
+| PUT    | `/preferences/:user_id` | Update or create user preferences: `language`, `theme`, `preferences`. |
+
 
 ---
 
