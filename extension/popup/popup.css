@@ -165,7 +165,7 @@ button:disabled {
 }
 
 .chat-box {
-  max-height: 300px;
+  max-height: 340px;
   overflow-y: auto;
   padding: 10px;
   border-radius: 8px;
