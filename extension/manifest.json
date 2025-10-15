@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Smart Summarizer Anywhere",
+    "version": "1.0",
+    "description": "Highlight or Paste in any text and get an instant AI summary.",
+    "permissions": ["contextMenus", "storage", "activeTab", "scripting"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup/popup.html",
+      "default_icon": "icons/summarize.png"
+    },
+    "icons": {
+      "16": "icons/summarize.png",
+      "48": "icons/summarize.png",
+      "128": "icons/summarize.png"
+    }
+  }
+  
