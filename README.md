@@ -1,4 +1,4 @@
-# AI Text Summarizer Extension
+# AI-Text-Summarizer-and-Chat-Chrome-Extension
 
 A Chrome web extension that provides instant text summarization, key point generation and the ability to chat; with understanding of user preferences and language while generating; Backend is Python/Flask based and utilizes DeepSeek AI, with cloud storage powered by Supabase (PostgreSQL).
 
