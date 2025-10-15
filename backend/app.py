@@ -99,6 +99,8 @@ def chat():
     question = data.get("question", "")
     context = data.get("context", {})
     session_id = data.get("session_id", None)  # optional, generate if missing
+    language = data.get("language", "en")
+    preferences = data.get("preferences", "")
 
     if not session_id:
         session_id = str(uuid.uuid4())  # create new session
@@ -114,10 +116,18 @@ def chat():
 
         TASK: Consider provided context to assist with user queries.
 
-        CONTEXT: 
-        - Original Text: {context.get("text", "")}
-        - Summary: {context.get("summary", "")}
-        - Key Points: {context.get("key_points", [])}
+        RULES:
+            - Avoid markdown formatting. Text only responses.
+            - Remain objective to uploaded text.
+
+        USER CONTEXT:
+            - Output Languge:  {LANGUAGE_NAMES.get(language, 'English')}
+            - User Preferences: {preferences}
+
+        TEXT CONTEXT: 
+            - Original Text: {context.get("text", "")}
+            - Summary: {context.get("summary", "")}
+            - Key Points: {context.get("key_points", [])}
     """
 
     # Build messages for the model: context + previous chat

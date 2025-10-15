@@ -192,6 +192,8 @@ async function sendChatMessage() {
 
   const context = {
     text: input.value,
+    language: userPreferences.language,
+    user_preferences: userPreferences.preferences,
     summary: summaryText.textContent,
     key_points: Array.from(keyPointsList.children).map(li => li.textContent)
   };

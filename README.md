@@ -1,6 +1,6 @@
 # AI Text Summarizer Extension
 
-A Chrome web extension that provides instant text summarization and key point generation ; with understanding of user preferences and language while generating; Backend is Python/Flask based and utilizes DeepSeek AI, with cloud storage powered by Supabase (PostgreSQL).
+A Chrome web extension that provides instant text summarization, key point generation and the ability to chat; with understanding of user preferences and language while generating; Backend is Python/Flask based and utilizes DeepSeek AI, with cloud storage powered by Supabase (PostgreSQL).
 
 ## Screenshots:
 <img width="419" height="569" alt="image" src="https://github.com/user-attachments/assets/d4316e18-8d7f-442a-97f5-f6424767c5b1" />
@@ -118,7 +118,7 @@ ON CONFLICT (user_id) DO NOTHING;
 
 ## Usage
 
-### Method 1: Context Menu (Recommended)
+### Method 1: Context Menu
 1. Highlight any text on a webpage
 2. Right-click the selected text
 3. Click **"Summarize with DeepSeek"**
